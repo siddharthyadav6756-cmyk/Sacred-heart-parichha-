@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Heart Academy | Excellence in Education</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f; /* Midnight Navy */
+            --accent: #c5a059;  /* Metallic Gold */
+            --text: #333;
+            --light: #f9f9f9;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: white;
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        nav ul { display: flex; list-style: none; }
+
+        nav ul li { margin-left: 2rem; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover { color: var(--accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
+                        url('https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--accent);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* --- Stats/Features --- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 10%;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); }
+
+        /* --- Section Styling --- */
+        section { padding: 5rem 10%; }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Teachers Section --- */
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            text-align: center;
+            padding-bottom: 1.5rem;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card h4 { margin-top: 1rem; color: var(--primary); }
+
+        .card p { color: #777; font-size: 0.9rem; }
+
+        /* --- Fees Table --- */
+        .fee-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        th { background: var(--light); color: var(--primary); }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 10% 2rem;
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SACRED HEART <span>ACADEMY</span></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#teachers">Faculty</a></li>
+            <li><a href="#fees">Admissions</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Inspiring Excellence Every Day</h1>
+        <p>A tradition of academic rigor, character building, and global leadership in the heart of Parichha.</p>
+        <a href="#about" class="btn">Learn More About Us</a>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-item">
+            <h3>15+</h3>
+            <p>Years of Legacy</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Result Record</p>
+        </div>
+        <div class="stat-item">
+            <h3>25+</h3>
+            <p>Expert Mentors</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Knowledge More About School</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>Our school is committed to providing a holistic environment where students grow into compassionate leaders. We focus on the Science stream, logical problem solving, and modern discipline. Our infrastructure includes high-tech labs, a digital library, and world-class sports facilities.</p>
+        </div>
+    </section>
+
+    <!-- Teacher Section -->
+    <section id="teachers" style="background: var(--light);">
+        <h2 class="section-title">Know Your Teachers</h2>
+        <div class="teacher-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=60" alt="Teacher">
+                <h4>Dr. Sarah Mitchell</h4>
+                <p>Head of Science Department</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=60" alt="Teacher">
+                <h4>Prof. James Wilson</h4>
+                <p>Mathematics & Logic Expert</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=500&q=60" alt="Teacher">
+                <h4>Ms. Elena Rodriguez</h4>
+                <p>Humanities & Leadership</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Section -->
+    <section id="fees">
+        <h2 class="section-title">Admission & Fees</h2>
+        <div class="fee-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Grade Level</th>
+                        <th>Tuition (Quarterly)</th>
+                        <th>Activity Fee</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary (Class 1-5)</td>
+                        <td>₹12,000</td>
+                        <td>₹2,500</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td>Secondary (Class 6-10)</td>
+                        <td>₹18,500</td>
+                        <td>₹3,500</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td>Higher Secondary (Class 11-12)</td>
+                        <td>₹25,000</td>
+                        <td>₹5,000</td>
+                        <td>Waitlist</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3 style="margin-bottom: 1rem;">Contact Us</h3>
+                <p>123 Academy Road, Parichha</p>
+                <p>Jhansi, UP, India</p>
+                <p>Email: contact@shacademy.edu</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem;">Quick Links</h3>
+                <p>Online Portal</p>
+                <p>School Calendar</p>
+                <p>Career Counseling</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Sacred Heart Academy. Developed with Excellence.
+        </div>
+    </footer>
+
+</body>
+                  </html>
